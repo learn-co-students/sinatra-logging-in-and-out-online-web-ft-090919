@@ -1,7 +1,7 @@
 class Helpers
 
   def Helpers.current_user(session)
-    @user1 = User.create(:username => params[:username], :password => params[:password], :balance => params[:balance])
+    @user = User.find_by(id: session[:user_id])
   end
 
   def Helpers.is_logged_in?(session)
